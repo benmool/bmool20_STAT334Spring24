@@ -1,0 +1,55 @@
+---
+title: "Class Prep 1"
+author: "Ben Moolman"
+format:
+  html:
+    embed-resources: true
+---
+
+a. What is your name and what is your class year (first-year, sophomore, junior, senior)?
+
+My name is Ben Moolman and I am a senior.
+
+b. What is/are your major(s) and minor(s), either actual or intended?
+
+I am a Math and Statistics double major.
+
+c. Why did you decide to take this course?
+
+I decided to take this course because I am interested in learning more about data science and how it can be applied to real world problems. I am also interested in learning more about R and how it can be used to analyze and visualize data.
+
+d. In what semester and year did you take STAT/DATA 234? STAT 213?
+
+I took STAT 213 in the spring of my sophomore year (2022) and took STAT 234 in the fall of my junior year (2022).
+
+e. Have you taken CS 140?
+
+Yes I have taken CS 140.
+
+f. Have you used Git before? If so, in what context?
+
+I have used Git in CS 219 and in CS 345 for repositories and version control.
+
+g. Before this course, did you use R Studio on your desktop?
+
+I have used R Studio on my desktop before this course.
+
+h. What is your hometown: city, state, country?
+
+Brookline, MA, United States
+
+i. Do you play a sport on campus? If so, what sport? If not, what is an activity that you do on or off-campus?
+
+I play on the varsity tennis team.
+
+j. What is your favorite TV show or movie or band/musical artist?
+
+My favorite TV show is Game of Thrones.
+
+k. Tell me something about yourself.
+
+I am a huge Boston sports fan.
+
+l. What are your expectations for this class and/or what do you hope to gain from this class?
+
+I hope to learn about different data visualization techniques and making interactive visualizations. I also am excited to clean up my Github and make it nice and presentable and professional looking.

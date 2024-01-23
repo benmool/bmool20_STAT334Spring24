@@ -1,0 +1,31 @@
+---
+title: "Class Prep 2"
+author: "Ben Moolman"
+format:
+  html:
+    embed-resources: true
+---
+
+1. Using either Anscombe’s quartet or the income/voter turnout graph as an example, explain why it’s valuable to look at data graphically instead of examining data only with summary statistics.
+
+Looking at data graphically instead of only looking at summary statistics is valuable like in the Anscombe's quartet example, where a significant association between voter turnout and income inequality was found. But when looking at the data graphed as a scatterplot, it was clear that the association changed if South Africa was included or not included in the sample.
+
+2. Take a look at the bar plot in Figure 1.4. Give a couple of reasons for why the chart has “bad taste.”
+
+The bar plot in Figure 1.4 has bad taste because the countries are labeled along somewhat of a y-axis but are also color coded at the top of the chart. The bars are also 3D and makes it hard to compare the bars to each other, and projects a weird shadow onto the background.
+
+3. Why might you not always want to maximize the data-to-ink ratio when making charts?
+
+You might not always want to maximize the data-to-ink ratio when making charts because it can make the chart hard to read and understand. If you have too much data, it can be hard to understand what the chart is trying to show, so oversimplifying and removing as much "ink" is not always the best idea.
+
+4. What do the authors mean when they say that “relative comparisons need a stable baseline” and how does that affect your ability to interpret the coloured stacked bar plot in Figure 1.11?
+
+It means that it is hard to compare the levels of Type A, for example, because it is at the top of all of these stacked bars. They have different baselines, but it would be easier to compare if they were all at the same baseline.
+
+5. What are two key takeaways from Sections 1.1 and 1.2?
+
+Two key takeaways from Sections 1.1 and 1.2 are that it is important to consider looking at data graphically instead of only looking at summary statistics, and that it is important to make sure that your graphs are easy to read and understand and oversimplifying is not always the key.
+
+6. What is one question that you have about the reading?
+
+One question I have about the reading is are there benefits to including some summary statistics in data visualizations or do you typically want to keep the two separate?
