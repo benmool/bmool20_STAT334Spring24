@@ -1,0 +1,170 @@
+---
+title: "ClassPrep5"
+author: "Ben Moolman"
+format:
+  html:
+    embed-resources: true
+---
+
+### Section 5.1
+
+Load libraries, set theme load in data
+```{r, output=FALSE}
+library(tidyverse)
+library(here)
+library(pander)
+theme_set(theme_minimal())
+hpi_df <- read_csv(here("data/hpi-tidy.csv"))
+```
+
+Look at data frame
+```{r}
+hpi_df
+```
+
+#### Section 5.1.1 Making a Scatterplot and Labeling Points
+
+Scatterplot of Footprint on the x-axis and Wellbeing on the y-axis to examine the relationship between countries’ carbon footprints and reported wellbeing of its citizens.
+```{r}
+ggplot(data = hpi_df, aes(x = Footprint, y = Wellbeing)) +
+  geom_point()
+```
+
+Filter df to get just US observation
+```{r}
+hpi_us <- hpi_df |> filter(Country == "United States of America")
+hpi_us
+```
+
+Use `geom_text()` to label the country from specific df
+```{r}
+ggplot(data = hpi_df, aes(x = Footprint, y = Wellbeing)) +
+  geom_point() +
+  geom_text(data = hpi_us, aes(label = Country)) ## specify
+```
+
+Surround the point being labeled with an open circle using an extra `geom_point()` function to distinguish it and use `geom_text_repel()` in the `ggrepel` library instead of `geom_text()` to “repel” the label away from the point that it’s labeling.
+```{r}
+## install.packages("ggrepel")
+library(ggrepel)
+ggplot(data = hpi_df, aes(x = Footprint, y = Wellbeing)) +
+  geom_point() +
+  geom_text_repel(data = hpi_us, aes(label = Country)) +
+  geom_point(data = hpi_us, size = 3, shape = 1) ## create a second point that is an open
+```
+
+#### Section 5.1.2 Themes and Labels
+
+Add `+ labs()` to change various labels and titles throughout the plot:
+```{r}
+ggplot(data = hpi_df, aes(x = Footprint, y = Wellbeing)) +
+  geom_point() +
+  geom_text_repel(data = hpi_us, aes(label = Country)) +
+  geom_point(data = hpi_us, size = 3, shape = 1) +
+  labs(title = "Countries with a Higher Ecological Footprint Tend to Have Citizens with Higher Wellbeing", ## add title
+    subtitle = "Wellbeing is on a 1-10 scale", ## add subtitle (smaller text size than the title)
+    caption = "Data Source: http://happyplanetindex.org/countries", ## add caption to the bottom of the figure
+    x = "Ecological Footprint", ## change x axis label
+    y = "Wellbeing") ## change y axis label
+```
+
+#### Exercise 1
+
+For each of the core dplyr functions `mutate()`, `arrange()`, `select()`, `slice()`, `filter()`, `group_by()`, and `summarise()`, write a one sentence summary of the overall purpose of the function.
+
+  * `mutate()` allows the creation of a new column or modification of an existing column in a dataframe, and this column can be a combination of other variables already in the dataframe.
+    
+  * `arrange()` allows the ordering of a dataframe by specified column names.
+  
+  * `select()` allows certain columns to be specified in the output or new dataframe, can be used to get rid of extra columns that may not be relevant.
+  
+  * `slice()` allows the selection and removal of rows in the dataframe.
+  
+  * `filter()` allows the selection of certain values for a variable, removes values that are not of interest.
+  
+  * `group_by()` allows levels of a variable to be grouped together and then operations can be performed based on those groups.
+  
+  * `summarise()` creates a new data frame and is good to use to present summary statistics.
+
+#### Exercise 2
+
+Review `mutate()`. Create a new variable in `hpi_df` that is equal to `Wellbeing / Footprint`.
+
+```{r}
+hpi_df <- hpi_df |> mutate(WellbeingFootprintRatio = Wellbeing / Footprint)
+hpi_df |> select(Country, Wellbeing, Footprint, WellbeingFootprintRatio) |> head() |> pander()
+```
+
+#### Exercise 3
+
+Review `mutate()` and `case_when()`. Create a new variable in `hpi_df` that is equal to "80s" if `LifeExp` is in the 80’s, "70s" if `LifeExp` is in the 70s, and "Below 70" if `LifeExp` is less than 70.
+
+```{r}
+hpi_df <- hpi_df |> mutate(AgeRange = case_when(LifeExpectancy >= 80 ~ "80s",
+                                       LifeExpectancy < 70 ~ "Below 70",
+                                       TRUE ~ "70s"))
+hpi_df |> select(Country, LifeExpectancy, AgeRange) |> head() |> pander()
+```
+
+#### Exercise 4
+
+Review `arrange()`. Sort the `hpi_df` data so that the country with the highest `LifeExp` is in the first row and the country with the lowest `LifeExp` is in the last row.
+
+```{r}
+lifeexp_arranged_df <- hpi_df |> arrange(desc(LifeExpectancy))
+head(lifeexp_arranged_df) |> pander(split.tables = Inf)
+```
+
+#### Exercise 5
+
+Review `select()`. Make a data frame from `hpi_df` that only has the variables `Country` and `LifeExp`.
+
+```{r}
+country_lifeexp_df <- hpi_df |> select(Country, LifeExpectancy)
+head(country_lifeexp_df) |> pander()
+```
+
+#### Exercise 6
+
+Review `slice()`. Make a data frame from `hpi_df` that only has the first 5 rows.
+
+```{r}
+hpi_sliced_df <- hpi_df |> slice(1:5)
+hpi_sliced_df |> pander(split.tables = Inf)
+```
+
+
+#### Exercise 7
+
+Review filter(). Make a data frame from `hpi_df` that only has countries in the `"Western World"` `Region`.
+
+```{r}
+hpi_west_world_df <- hpi_df |> filter(Region == "Western World")
+head(hpi_west_world_df) |> select(HPIRank, Country, Region, everything()) |>
+  pander(split.tables = Inf)
+```
+
+#### Exercise 8
+
+Review `filter()`. Make a data frame from `hpi_df` that only has countries with a `LifeExp` less than 55.
+
+```{r}
+hpi_less55_df <- hpi_df |> filter(LifeExpectancy < 55)
+head(hpi_less55_df) |> pander(split.tables = Inf)
+```
+
+#### Exercise 9
+
+Review `group_by()` and `summarise()`. Make a table of the number of countries in each `Region.` (Hint: recall that the `n()` function is the counting function in `dplyr`).
+
+```{r}
+hpi_df |> group_by(Region) |> summarise(n = n()) |> pander()
+```
+
+#### Exercise 10
+
+Review `group_by()` and `summarise()`. Make a table with the maximum `LifeExp` in each `Region.`
+
+```{r}
+hpi_df |> group_by(Region) |> summarise(HighestLifeExp = max(LifeExpectancy)) |> pander()
+```

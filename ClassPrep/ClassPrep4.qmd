@@ -14,28 +14,38 @@ A color's hue is the main color that we see, going by the common names of color 
 
 2. Think of an example where you would want to use a sequential colour scale that’s different from the one given in the text. Then, think of examples where you would use a diverging colour scale and an unordered colour scale.
 
-An example that you would want to use a sequential color scale different from one in the text would be when measuring rainfall.
-
-You could use a diverging color scale when measuring thoughts on the current food options on campus, and an unordered color scale when comparing quantitative data between different departments on campus.
+An example that you would want to use a sequential color scale different from one in the text would be when measuring rainfall. You could use a diverging color scale when measuring thoughts on the current food options on campus, and an unordered color scale when comparing quantitative data between different departments on campus.
 
 3. Some gestalt inferences take priority over others. Using Figure 1.21, give an example of a gestalt inference that takes priority over another one.
 
+In the middle-right figure with squares and circles, the highlighted circle and square are an example of how proximity can take priority over connection.
 
+From textbook:
+
+    - Proximity: Things that are spatially near to one another seem to be related.
+    - Similarity: Things that look alike seem to be related.
+    - Connection: Things that are visually tied to one another seem to be related.
+    - Continuity: Partially hidden objects are completed into familiar shapes.
+    - Closure: Incomplete shapes are perceived as complete.
+    - Figure and Ground: Visual elements are taken to be either in the foreground or the background.
+    - Common Fate: Elements sharing a direction of movement are perceived as a unit.
 
 4. “Bar charts are better than Pie charts for visualizing a single categorical variable.” Explain how results shown in Figure 1.23 support this claim.
 
-
+Figure 1.23 shows resluts from two experiments, one done by William S. Cleveland and Robert McGill and another done by Heer & Bostock replicating the first experiment with additional charts. The results of the experiments show the log error of research subjects asked to estimate the two values within a chart or compare two values in different charts. In Figure 1.23, the log error is lower for bar charts than Pie charts in both experiments, supporting the clai that "bar charts are better than Pie charts for visualizing a single categorical variable".
 
 5. Suppose you have a scatterplot of height on the y-axis vs. weight on the x-axis for people born in Canada, Mexico, and the United States. You now want to explore whether the relationship is different for people born in the United States, people born in Canada, and people born in Mexico. Should you use different shapes to distinguish the three countries or should you use different colours? Explain using either Figure 1.24 or 1.25.
 
-
+I believe you should use different colors to distinguish the three countries. If a bad set of hues is picked, the result may be misleading, since we are working with an unordered categorical variable, but when looking at Figure 1.25, it ranks the channels for mapping an unordered categorical variable and color hue is ranked 2nd whereas shapes is ranked 4th.
 
 6. When might you use the left-side of Figure 1.27 to show the law school data? When might you use the right-side of Figure 1.27 to show the law school data?
 
-
+You might use the left-side of Figure 1.27 to show the law school data if you want to raise the point that there has been a dramatic drop in first year enrollment in law school since the year 2010. You might use the right-side of Figure 1.27 to show that although levels have still dropped in first year enrollment, they are still at a very high level of ~35,000.
 
 7. Summary: What are two takeaways from Sections 1.3-1.7?
 
+One big takeaway is being conscious of what you want to show in your visualization when dealing with a quantitative variable along the x and/or y axis, because starting the scale at 0 versus the lowest data point in the dataset can really change how the data is interpreted. Another takeaway is considering who the audience is for your visualization, because as shown through the experiments done by Cleveland and Heer & Bostock, some visualizations will be easier to interpret for a general audience than others.
 
 8. What is one question that you have about the reading?
 
+Referring to question 5, I am unsure as to if one option is much better than the other given that we do not know much about the data. If there were not many points, then shapes could still be a valid option but I do understand that they could be hard to discern if they were overlapping. Is it that bad to use both color and shape so that maybe those with color vision deficiency will have an easier time? I know we want to keep visualizations simple, but a nice key on the side could explain that a certain combo of shape and color represents each country.

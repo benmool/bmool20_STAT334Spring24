@@ -1,8 +1,12 @@
 ---
 title: "Section 2: Basics"
-author: "STAT-334 Class"
-format: html
+author: "Ben Moolman"
+format:
+  html:
+    embed-resources: true
 ---
+
+# Section 2.2 Grammar of Graphics
 
 Practice basic plots with this dataset:
 ```{r}
@@ -51,7 +55,7 @@ ggplot(data = penguins, aes(x = species, fill = sex)) +
 ## NA values are messing up widths of bars
 
 ## Remove missing NA values
-penguins_na <- penguins |> na.omit ## gets rid of any row w/ NA value
+# penguins_na <- penguins |> na.omit ## gets rid of any row w/ NA value
 ## or
 penguins_na <- penguins |> filter(!is.na(sex)) ## gets rid of any row in sex col w/ NA value
 
@@ -70,7 +74,7 @@ ggplot(data = penguins, aes(x = species)) +
 
 ## Exercise 1
 ```{r}
-ggplot(data = penguins, aes(x = bill_length_mm)) +
+ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point()
 ```
 
@@ -138,25 +142,30 @@ ggplot(data = penguins, aes(x = bill_length_mm,
 ## Exercise 5
 Construct another graph that explicitly uses all 7 grammar of graphics parameters (you may set some of these parameters to be the default values, but you should do so explicitly).
 ```{r}
-
+ggplot(data = penguins, aes(x = species, fill = sex)) +
+  geom_bar(stat = "count", position = "dodge") +
+  facet_wrap(~ island) + 
+  coord_flip()
 ```
+
+  * <DATA>: data = penguins
+  * <MAPPINGS>: aes(x = species, fill = sex)
+  * <GEOM_FUNCTION>: geom_bar()
+  * <STAT>: stat = "count:
+  * <POSITION>: position = "dodge"
+  * <FACET_FUNCTION>: facet_wrap()
+  * <COORDINATE_FUNCTION>: coord_flip()
 
 ## Exercise 6
 Create two different graphs that differ only by 1 of the 7 grammar of graphics parameters. Then, show your two graphs (but not your code) to a partner and see if they can identify which graphics parameter has been modified.
+
 ```{r}
-ggplot(data = penguins, aes(x = body_mass_g)) +
-  geom_point(stat = "identity", position = "identity") +
-  geom_
+ggplot(data = penguins, aes(x = body_mass_g, y = bill_length_mm)) +
+  geom_point(aes(colour = sex)) + 
   facet_wrap(~ island)
   
-  
-
+ggplot(data = penguins, aes(x = body_mass_g, y = bill_length_mm)) +
+  geom_point(aes(colour = sex)) + 
+  facet_wrap(~ island) +
+  coord_flip()
 ```
-
-
-
-
-
-
-
-

@@ -1,0 +1,71 @@
+---
+title: "01-TakeHome"
+author: "Ben Moolman"
+format:
+  html:
+    embed-resources: true
+---
+
+Statement of Integrity: “All work presented is my own, and I have followed all rules for collaboration. If I used any AI on this assignment, I have clearly stated both (1) what my search prompt was and (2) what I used from the AI answer.”
+
+Ben Moolman
+
+Collaboration Reminder: You may work with other students in the class on the quiz, but you must list who you worked with at the top of your quiz. Write the name of any student(s) that you collaborated with in the space below this (ignore this if you did not collaborate with any students).
+
+#### Question 1 (1 point).
+
+Consider the following graph:
+
+For which level of the category variable is it easiest to see the overall trend in the count through time? Use terminology from our course reading to give a one sentence reason for your selection.
+
+It is easiest to see the overall trend in the count through time for the Group 5 level of the categorical variable because it is the baseline.
+
+#### Question 2 (2 points).
+
+  a. (1 point). Suppose that we want to make a map of the United States, and colour each state by the percent change in Covid cases this week compared to last week. States with an increase would have a positive percent change while states with a decrease would have a negative percent change. Should we use a sequential, diverging, or qualitative colour scale to colour the states? Give a one phrase or one sentence explanation.
+  
+  We should use a divering colour scale to colour the states because this accounts for a positive increase and a negative increase which can be more extreme in colour, whereas states with little to no change would have very light to no color.
+
+  b. (1 point). Suppose that, in our map, we now want to colour the states by the number of covid cases per 100,000 people. Should we use a sequential, diverging, or unordered colour scale to colour the states? Give a one phrase or one sentence explanation.
+  
+  We should use a sequential colour scale to colour the states so that the states with the highest numbers of covid cases per 100,000 people stand out and are much different than the states with the lowest numbers of covid cases per 100,000 people, and states in between these should not be randomly colored, but should show progression from one end of the scale to the other.
+  
+#### Question 3 (2 points).
+
+Suppose that, after grading this entire first course assessment for each student, I tell the class that the average for the first assessment was 85 out of 100 points.
+
+  a. If you had the data on each student’s assessment grade, what graph would be most appropriate to visualize this data?
+  
+  A histogram would be the most appropriate to visualize this data.
+
+  b. What would the graph you selected in (a) tell you that you are not able to obtain from knowing the average? There are many additional things that a visualization would convey, and you should list as many as you can.
+
+  Knowing the average does not tell you as much as a histogram, which would tell you what the spread looks like, what the sample size is, and what the shape is.
+  
+#### Question 4 (3 points).
+
+Examine the following pairs of graphs on data on baseball players in the 2018 season. For each pair, state which of the 7 Grammar of Graphics parameters is different between the two graphs. Give a one phrase or one sentence reason for each selection.
+
+  a. Pair 1
+  
+  `<GEOM_FUNCTION>` is different here, the second graph uses `geom_boxplot()`.
+  
+  b. Pair 2
+  
+  `<COORD_FUNCTION>` is different here, the second graph uses `coord_flip()`.
+  
+  c. Pair 3
+
+  `<POSITION>` is different here, the second graph uses dodge to get the barplots side by side with the points. Could also be done by `<GEOM_FUNCTION>` difference with `geom_jitter()`.
+  
+#### Question 5 (2 points)
+
+Consider the following pairs of graphs. For each pair, select the graph that you believe is the better of the two. Give a 1-2 sentence reason for your selection, using reasoning from the course readings or from class.
+
+  a. The first pair examines the total number of players in the baseball data set in each of 4 positions.
+  
+  Plot 2 is the better of the two, because the length of the lollipops is not important to the graph. Thus, it is not necessary to start the x-axis at 0, and we can instead start it at 40 so we can be more zoomed in and observe the differences between positions better.
+  
+  b. The second pair visualizes the number of homeruns for players in the data set, broken up by the player’s position.
+  
+  Plot 1 is the better of the two, because you can see the distribution of homeruns by each position with the faceting as opposed to the frequency plot with 9 different colored lines on it. It seems much easier to compare as opposed to all of the lines criss-crossing and getting jumbled.
