@@ -1,0 +1,52 @@
+---
+title: "01-Coding"
+author: "Ben Moolman"
+format:
+  html:
+    embed-resources: true
+---
+
+Statement of Integrity: “All work presented is my own, and I have followed all rules for collaboration. I have not used any AI for this assignment.”
+
+Ben Moolman
+
+#### Question 1 (4 points).
+
+Using the diamonds data set, create the following plot. For the first plot, you should change the default colour and fill of your histogram to values other than the default, but they do not need to match the colours given below exactly.
+
+```{r}
+#| output: false
+library(tidyverse)
+```
+
+```{r}
+diamonds
+```
+
+```{r}
+ggplot(data = diamonds, aes(x = price)) +
+  geom_histogram(colour = "blue4", fill = "lightblue", binwidth = 1000) +
+  facet_wrap(~ cut)
+```
+
+
+#### Question 2 (4 points).
+
+Change 2 theme options of your plot in the previous question. At least one of these changes should involve the use of either element_rect() or element_line() in some way. The following gives the reference page we used in class: https://ggplot2.tidyverse.org/reference/theme.html
+
+```{r}
+ggplot(data = diamonds, aes(x = price)) +
+  geom_histogram(colour = "blue4", fill = "lightblue", binwidth = 1000) +
+  facet_wrap(~ cut) +
+  theme(
+    axis.ticks = element_line(colour = "black", linewidth = 0.5),
+    panel.grid = element_line(linewidth = 0.2),
+    panel.border = element_rect(fill = NA)
+  )
+```
+
+#### Question 3 (2 points).
+
+Push your .qmd file to your GitHub repository. For this question, give the link to your GitHub repository here.
+
+https://github.com/benmool/bmool20_STAT334Spring24
